@@ -169,7 +169,7 @@ object ArticleRepository {
 
 
         for(i in articles){
-            var file =File("C:\\Users\\SBS-\\IdeaProjects\\Exam15\\src\\main\\json\\article\\${i.id}.json")
+            var file =File("src/main/json/article/${i}.json")
             if(!file.exists()){
                 file.createNewFile()
             }
@@ -182,9 +182,10 @@ object ArticleRepository {
     fun readArticle() {
 
         val mapper= jacksonObjectMapper()
-        var file =File("C:\\Users\\SBS-\\IdeaProjects\\Exam15\\src\\main\\json\\article")
+        var file =File("src/main/json/article")
+
        for(i in 1..file.list().size){
-            articles.add(mapper.readValue<Article>(File("C:\\Users\\SBS-\\IdeaProjects\\Exam15\\src\\main\\json\\article\\${i}.json")))
+            articles.add(mapper.readValue<Article>(File("src/main/json/article/${i}.json")))
         }
 
 

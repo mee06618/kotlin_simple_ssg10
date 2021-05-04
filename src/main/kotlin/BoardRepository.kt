@@ -65,7 +65,7 @@ object BoardRepository {
 
 
         for(i in boards){
-            var file = File("C:\\Users\\SBS-\\IdeaProjects\\Exam15\\src\\main\\json\\board\\${i.id}.json")
+            var file = File("src/main/json/board/${i.id}.json")
             if(!file.exists()){
                 file.createNewFile()
             }
@@ -78,9 +78,9 @@ object BoardRepository {
     fun readBoard() {
 
         val mapper= jacksonObjectMapper()
-        var file = File("C:\\Users\\SBS-\\IdeaProjects\\Exam15\\src\\main\\json\\board")
+        var file = File("src/main/json/board")
         for(i in 1..file.list().size){
-            boards.add(mapper.readValue<Board>(File("C:\\Users\\SBS-\\IdeaProjects\\Exam15\\src\\main\\json\\board\\${i}.json")))
+            boards.add(mapper.readValue<Board>(File("src/main/json/board/${i}.json")))
         }
 
 

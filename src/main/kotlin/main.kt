@@ -11,7 +11,7 @@ fun main() {
         if(num==0)
         print("명령어)")
         else
-            print("${member.getNick(num)}")
+            print("${member.getNick(num)})")
         val command = readLineTrim()
         val rq =Rq(command)
 

@@ -57,7 +57,7 @@ object MemberRepository {
 
 
         for(i in members){
-            var file = File("C:\\Users\\SBS-\\IdeaProjects\\Exam15\\src\\main\\json\\member\\${i.num}.json")
+            var file = File("src/main/json/member/${i}.json")
             if(!file.exists()){
                 file.createNewFile()
             }
@@ -70,9 +70,9 @@ object MemberRepository {
     fun readMember() {
 
         val mapper= jacksonObjectMapper()
-        var file = File("C:\\Users\\SBS-\\IdeaProjects\\Exam15\\src\\main\\json\\member")
+        var file = File("src/main/json/member")
         for(i in 1..file.list().size){
-            members.add(mapper.readValue<Member>(File("C:\\Users\\SBS-\\IdeaProjects\\Exam15\\src\\main\\json\\member\\${i}.json")))
+            members.add(mapper.readValue<Member>(File("src/main/json/member/${i}.json")))
         }
 
 
